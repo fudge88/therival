@@ -1,7 +1,9 @@
 import './App.css';
 
+import Typography from '@mui/material/Typography';
+
 const App = () => {
-	return <h1>The Rival Games</h1>;
+	return <Typography variant="h1"> Hello reival</Typography>;
 };
 
 export default App;
