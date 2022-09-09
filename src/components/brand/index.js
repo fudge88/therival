@@ -10,7 +10,7 @@ const Brand = () => {
 			sx={{
 				mr: 2,
 				justifyContent: 'center',
-				display: { xs: 'none', md: 'flex' },
+				display: { xs: 'flex', md: 'flex' },
 			}}>
 			<img
 				src={Logo}

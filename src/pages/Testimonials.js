@@ -1,9 +1,9 @@
-import React from 'react';
+import Carousel from '../components/carousel';
 
 const Testimonials = () => {
 	return (
 		<div>
-			<h1>testimonials page</h1>
+			<Carousel />
 		</div>
 	);
 };

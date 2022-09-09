@@ -8,9 +8,12 @@ import MenuItem from '@mui/material/MenuItem';
 
 import '../../App.css';
 
-const pages = ['Home', 'Portfolio', 'Testimonials', 'Contact'];
+import { pages } from '../../data/navLink';
+import { page } from '../../data/navLink';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Navigation = () => {
+	const navigate = useNavigate();
 	const [anchorElNav, setAnchorElNav] = useState(null);
 
 	const handleOpenNavMenu = (event) => {
@@ -25,16 +28,6 @@ const Navigation = () => {
 		// <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
 		<AppBar position="static" sx={{ boxShadow: 'none' }}>
 			<Toolbar sx={{ backgroundColor: 'white', color: 'black' }}>
-				{/* <Typography
-					noWrap
-					component="div"
-					sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-					<img
-						src={Logo}
-						style={{ width: 240, height: 140 }}
-						alt="rival games logo"
-					/>
-				</Typography> */}
 				<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 					<IconButton
 						size="large"
@@ -75,13 +68,15 @@ const Navigation = () => {
 						display: { xs: 'none', md: 'flex' },
 						justifyContent: 'center',
 					}}>
-					{pages.map((page) => (
-						<MenuItem key={page} onClick={handleCloseNavMenu}>
+					{page.map((item) => (
+						<MenuItem key={item.id} onClick={handleCloseNavMenu}>
 							<Typography
 								variant="body1"
 								textAlign="center"
 								sx={{ textTransform: 'uppercase' }}>
-								{page}
+								<Link to={`${item.nav}`} key={item.id}>
+									{item.title}
+								</Link>
 							</Typography>
 						</MenuItem>
 					))}
