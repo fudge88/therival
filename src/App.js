@@ -1,9 +1,12 @@
 import './App.css';
-
-import Typography from '@mui/material/Typography';
+import Navigation from './components/navigation';
 
 const App = () => {
-	return <Typography variant="h1"> Hello reival</Typography>;
+	return (
+		<div>
+			<Navigation />
+		</div>
+	);
 };
 
 export default App;
