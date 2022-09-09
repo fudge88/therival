@@ -10,10 +10,9 @@ import '../../App.css';
 
 import { pages } from '../../data/navLink';
 import { page } from '../../data/navLink';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
-	const navigate = useNavigate();
 	const [anchorElNav, setAnchorElNav] = useState(null);
 
 	const handleOpenNavMenu = (event) => {

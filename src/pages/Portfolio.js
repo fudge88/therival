@@ -1,9 +1,10 @@
 import React from 'react';
+import GamesList from '../components/gamesList';
 
 const Portfolio = () => {
 	return (
 		<div>
-			<h1>portfolio page</h1>
+			<GamesList />
 		</div>
 	);
 };

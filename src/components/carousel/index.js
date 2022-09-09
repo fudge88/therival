@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -32,7 +32,7 @@ const Carousel = () => {
 				className="mySwiper">
 				{carouselImages.map((item) => (
 					<SwiperSlide key={item.id}>
-						<img src={item.img} />
+						<img src={item.img} alt={item.title} />
 						<Typography className="testimonial" sx={{ position: 'absolute' }}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
 							dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
