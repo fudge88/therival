@@ -8,7 +8,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 import '../../App.css';
 
-import { pages } from '../../data/navLink';
 import { page } from '../../data/navLink';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +23,6 @@ const Navigation = () => {
 	};
 
 	return (
-		// <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
 		<AppBar position="static" sx={{ boxShadow: 'none' }}>
 			<Toolbar sx={{ backgroundColor: 'white', color: 'black' }}>
 				<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -54,9 +52,13 @@ const Navigation = () => {
 						sx={{
 							display: { xs: 'block', md: 'none' },
 						}}>
-						{pages.map((page) => (
-							<MenuItem key={page} onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">{page}</Typography>
+						{page.map((item) => (
+							<MenuItem key={item.id} onClick={handleCloseNavMenu}>
+								<Typography textAlign="center">
+									<Link to={`${item.nav}`} key={item.id}>
+										{item.title}
+									</Link>
+								</Typography>
 							</MenuItem>
 						))}
 					</Menu>
@@ -82,7 +84,6 @@ const Navigation = () => {
 				</Box>
 			</Toolbar>
 		</AppBar>
-		// </Box>
 	);
 };
 
